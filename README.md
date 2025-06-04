@@ -38,4 +38,14 @@ Set these as Application Settings in Azure, or in your `local.settings.json` for
 
 ## Example Request
 
-**GET:**
+**POST:**
+
+
+ /api/GetDefaultAndCustomImageTags?imageUrl=https://example.com/image.jpg&code=<your-function-key>
+
+**POST:**
+```json
+POST /api/GetDefaultAndCustomImageTags?code=<your-function-key>
+{
+  "imageUrl": "https://example.com/image.jpg"
+}
