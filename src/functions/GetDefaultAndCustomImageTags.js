@@ -1,11 +1,17 @@
 const { app } = require('@azure/functions');
 
 // Default Computer Vision API config
+// CV_ENDPOINT: The base URL for the Azure Computer Vision API (e.g., "https://<your-region>.api.cognitive.microsoft.com")
+// CV_KEY: The subscription key for your Azure Computer Vision resource
+// CV_MIN_PROBABILITY: Minimum confidence threshold for tags (e.g., "0.65")
 const CV_ENDPOINT = process.env.CV_ENDPOINT;
 const CV_KEY = process.env.CV_KEY;
 const CV_MIN_PROBABILITY = parseFloat(process.env.CV_MIN_PROBABILITY) || 0.65;
 
 // Custom Vision Prediction Service config
+// CP_PREDICTION_KEY: The prediction key for your Azure Custom Vision resource
+// CP_ENDPOINT: The endpoint URL for your Custom Vision Prediction API (e.g., "https://<your-resource>.cognitiveservices.azure.com/customvision/v3.0/Prediction/<project-id>/detect/iterations/<iteration-name>/image/url")
+// CP_MIN_PROBABILITY: Minimum probability threshold for custom predictions (e.g., "0.65")
 const CP_PREDICTION_KEY = process.env.CP_PREDICTION_KEY;
 const CP_ENDPOINT = process.env.CP_ENDPOINT;
 const CP_MIN_PROBABILITY = parseFloat(process.env.CP_MIN_PROBABILITY) || 0.65;
